@@ -9,7 +9,7 @@ function Header() {
       <div className="max-w-7xl mx-auto text-white">
         <div className="flex justify-between items-center">
           <Link to={"/"}>
-            <h1>Job Board</h1>
+            <h1 className="font-bold">Job Board</h1>
           </Link>
           <div className="space-x-10">
             <NavLink to={"contact"}>Contact</NavLink>
