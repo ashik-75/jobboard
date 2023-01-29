@@ -23,11 +23,13 @@ function Details() {
     );
   }
 
+  const info: any = data;
+
   return (
     <div>
       <div className="max-w-xl bg-slate-900 rounded p-10">
-        <h1 className="font-bold text-xl">{data?.title}</h1>
-        <p>{data.content}</p>
+        <h1 className="font-bold text-xl">{info?.title}</h1>
+        <p>{info.content}</p>
       </div>
     </div>
   );
