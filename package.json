@@ -19,6 +19,7 @@
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.42.1",
     "react-hot-toast": "^2.4.0",
+    "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.7.0",
     "yup": "^0.32.11"
   },

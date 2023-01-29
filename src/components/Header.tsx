@@ -13,6 +13,7 @@ function Header() {
           </Link>
           <div className="space-x-10">
             <NavLink to={"contact"}>Contact</NavLink>
+            <NavLink to={"demo"}>Demo</NavLink>
             {user && <NavLink to={"add-job"}>Add Job</NavLink>}
             <NavLink to={"login"}>{user ? "Profile" : "Login"}</NavLink>
           </div>

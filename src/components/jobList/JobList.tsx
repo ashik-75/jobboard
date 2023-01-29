@@ -1,5 +1,6 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Oval } from "react-loader-spinner";
 import { auth } from "../../firebase";
 import { getJobs } from "../../services/job.services";
 import JobSkeleton from "../skeleton/JobSkeleton";
@@ -43,25 +44,33 @@ function JobList() {
     })
     .flatMap((x) => x);
 
-  console.log({ items });
-
   return (
     <div className="space-y-5">
       {items.map((job) => {
         return <Job authEmail={user?.email!} job={job} />;
       })}
 
-      {items.length > 0 && (
-        <div className="text-center my-10">
+      {hasNextPage && (
+        <div className="flex items-center justify-center my-10">
           <button
             onClick={() => fetchNextPage()}
-            className="px-4 py-2 rounded border"
+            className="px-4 py-2 font-semibold rounded flex items-center space-x-2 bg-purple-700"
           >
-            {isFetchingNextPage
-              ? "Loading more..."
-              : hasNextPage
-              ? "Load More"
-              : "Nothing more to load"}
+            <span>{isFetchingNextPage ? "Loading ..." : "Load More"}</span>
+            {isFetchingNextPage && (
+              <Oval
+                height={20}
+                width={20}
+                color="#fcfcfc"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+                ariaLabel="oval-loading"
+                secondaryColor="#dddbdb"
+                strokeWidth={4}
+                strokeWidthSecondary={4}
+              />
+            )}
           </button>
         </div>
       )}

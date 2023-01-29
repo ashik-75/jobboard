@@ -34,8 +34,6 @@ export async function deleteJob(jobId: string) {
   return response;
 }
 
-let index = 0;
-
 export async function getJobs({ pageParam }: any) {
   console.log({ pageParam });
   const documentsRef = collection(db, "jobs");
